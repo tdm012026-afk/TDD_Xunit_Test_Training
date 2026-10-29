@@ -18,4 +18,8 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TddLearning\TddLearning.csproj" />
+  </ItemGroup>
+
 </Project>
