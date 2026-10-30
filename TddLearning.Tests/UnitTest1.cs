@@ -11,7 +11,7 @@ public class UnitTest1
     // }
 
     [Fact]
-    public void Add_TwoNumbers_ReturnSum()
+    public void Add_TwoPositiveNumbers_ReturnCorrectSum()
     {
         var calculator = new Calculator();  // Missing Calculator class
         var result = calculator.Add(2, 3);
