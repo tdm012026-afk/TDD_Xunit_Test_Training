@@ -10,12 +10,30 @@ public class UnitTest1
     //     Assert.True(true);
     // }
 
-    [Fact]
-    public void Add_TwoPositiveNumbers_ReturnCorrectSum()
+    [Fact]                  //second test 
+    public void Add_TwoPositiveNumbers_ReturnsCorrectSum()
     {
-        var calculator = new Calculator();  // Missing Calculator class
+        var calculator = new Calculator();  
         var result = calculator.Add(2, 3);
 
         Assert.Equal(5, result);
+
+        Console.WriteLine($"Result: {result}");
+
+    }
+    [Fact]              //Third Test
+    public void Add_TwoNegativeNumbers_ReturnsCorrectSum()
+    {
+        //Arrange
+        var calculator = new Calculator();
+
+        //Act
+        var result = calculator.Add(-2, -3);
+
+        // Assert
+        Assert.Equal(-5, result);
+
+        // Display result 
+        Console.WriteLine($"Result: {result}");
     }
 }
