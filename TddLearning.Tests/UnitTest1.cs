@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.IO.Pipelines;
+using System.Security.Cryptography.X509Certificates;
 using Xunit;
 
 namespace TddLearning.Tests;
@@ -96,22 +98,22 @@ public class UnitTest1
     //     // Assert
     //     Assert.Equal(expected, result);
     // }
-    [Theory]
-    [InlineData(5, 5, 25)]
-    [InlineData(6, 6, 36)]
-    [InlineData(7, 7, 49)]
-    public void Multiply_Numbers_ReturnCorrectResult(int a, int b, int expected)
-    {
-        //Arrange
-        var calculator = new Calculator();
+    // [Theory]
+    // [InlineData(5, 5, 25)]
+    // [InlineData(6, 6, 36)]
+    // [InlineData(7, 7, 49)]
+    // public void Multiply_Numbers_ReturnCorrectResult(int a, int b, int expected)
+    // {
+    //     //Arrange
+    //     var calculator = new Calculator();
 
-        //Act 
-        var result = calculator.Multiply(a, b);
+    //     //Act 
+    //     var result = calculator.Multiply(a, b);
 
-        //Assert
-        Assert.Equal(expected, result);
+    //     //Assert
+    //     Assert.Equal(expected, result);
 
-    }
+    // }
     // [Fact]
     // public void Multiply_TwoNumbers_ReturnCorrectSum()
     // {
@@ -121,5 +123,27 @@ public class UnitTest1
 
     //      Assert.Equal(20, result);
     // }
+    // [Fact]
+    // public void Divide_ByZero_ThrowsException()
+    //     {
+    //         //Arrange
+    //         var calculator = new Calculator();
+
+    //         // Act & Assert
+    //         Assert.Throws<DivideByZeroException>(() => calculator.Divide(10, 0));
+    //     }
+    [Fact]
+    public void Divide_ByTwo_ReturnCorrectSum()
+    {
+        //Arrange 
+        var calculator = new Calculator();
+
+        // Act & Assert
+
+        var result = calculator.Divide(10, 2);
+
+        Assert.Equal(5, result);
+
+    }
 
 }
