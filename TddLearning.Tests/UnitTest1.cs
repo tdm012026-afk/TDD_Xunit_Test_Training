@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System.Diagnostics.CodeAnalysis;
+using Xunit;
 
 namespace TddLearning.Tests;
 
@@ -69,6 +70,31 @@ public class UnitTest1
 
         Console.WriteLine($":: Result :: {result}");
     
+    }
+    [Fact]
+    public void Divide_ByZero_ThrowsException()
+    {
+        //Arrange
+        var calculator = new Calculator();
+
+        //Act & Assert
+        Assert.Throws<DivideByZeroException>(() => calculator.Divide(10, 0));
+    
+    }
+    [Theory]
+    [InlineData(10, 2, 5)]
+    [InlineData(-10, -2, 5)]
+    [InlineData(0, 5, 0)]
+    public void Divide_Numbers_ReturnCorrectResult(int a, int b, int expected)
+    {
+        //Arrange
+        var calculator = new Calculator();
+
+        //Act
+        var result = calculator.Divide(a, b);
+
+        // Assert
+        Assert.Equal(expected, result);
     }
 
 }
