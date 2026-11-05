@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System.Runtime.CompilerServices;
+using Xunit;
 
 namespace TddLearning.Tests;
 
@@ -80,6 +81,18 @@ public class UnitTest1
 
         // Act & Assert
         Assert.Throws<DivideByZeroException>(() => calculator.Divide(10, 0));
+    }
+    [Theory]
+    [InlineData(5, 25)]
+    [InlineData(3, 9)]
+    [InlineData(-4, 16)]
+    public void Square_Number_ReturnsCorrectResult(int number, int expected)
+    {
+        var calculator = new Calculator();
+
+        var result = calculator.Square(number);
+
+        Assert.Equal(expected, result);
     }
     
 }

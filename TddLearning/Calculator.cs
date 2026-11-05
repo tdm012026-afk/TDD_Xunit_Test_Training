@@ -19,6 +19,10 @@ public class Calculator
     {
         return a - b;
     }
+    public int Square(int number)
+    {
+        return number * number;
+    }
     
     
 }
